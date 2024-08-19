@@ -85,11 +85,6 @@ const Form = () => {
             body: JSON.stringify(values),
         });
         const loggedIn = await loggedInResponse.json();
-        if (!loggedInResponse.ok) {
-            const errorText = await loggedInResponse.text();
-            console.error('Error response:', errorText);
-            throw new Error('Login failed');
-        }
         onSubmitProps.resetForm();
         if (loggedIn) {
             dispatch(
