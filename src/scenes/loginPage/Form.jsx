@@ -77,7 +77,6 @@ const Form = () => {
     };
 
     const login = async (values, onSubmitProps) => {
-        console.log(process.env.REACT_APP_API_URL)
         const loggedInResponse = await fetch(`${process.env.REACT_APP_API_URL}/auth/login`, {
             method: 'POST',
             headers: {
